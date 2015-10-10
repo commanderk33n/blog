@@ -39,7 +39,7 @@ if ($row['postID'] == '') {
 
         <p>Posted on <?= date('jS M Y', strtotime($row['postDate'])) ?> </p>
 
-        <p><?= $row['postCount'] ?></p>
+        <p><?= $row['postCont'] ?></p>
     </div>
 </div>
 

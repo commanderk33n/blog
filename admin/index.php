@@ -6,6 +6,19 @@
  * Date: 10.10.15
  * Time: 22:30
  */
+//include config
+require_once('../includes/config.php');
+//if not logged in redirect to login page
+if (!$user->is_logged_in()) {
+    header('Location: login.php');
+}
+//show message from add / edit page
+if (isset($_GET['delpost'])) {
+    $stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID');
+    $stmt->execute(array(':postID' => $_GET['delpost']));
+    header('Location: index.php?action=deleted');
+    exit;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,7 +50,7 @@
 
         <?php
         try {
-            $stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY post ID DESC');
+            $stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
             while ($row = $stmt->fetch()) {
                 ?>
                 <tr>

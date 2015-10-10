@@ -21,24 +21,24 @@ require('includes/config.php');
 
 <div id="wrapper">
 
-    <h1>eikood's Blog</h1>
+    <h1>eikood's blog - my scrapbook and other silly crap...</h1>
     <hr/>
 
     <?php
     try {
 
-        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
+        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID');
         while ($row = $stmt->fetch()) {
             ?>
 
             <div>
                 <h1><a href="viewpost.php?id=<?= $row['postID'] ?>"> <?= $row['postTitle'] ?></a></h1>
 
-                <p>Posted on <?= date('jS M Y H:i:s', strtotime($row['postDate'])) ?></p>
+                <p>posted on <?= date('jS M Y H:i:s', strtotime($row['postDate'])) ?></p>
 
                 <p><?= $row['postDesc'] ?></p>
 
-                <p><a href="viewpost.php?id=<?= $row['postID'] ?>">Read More</a></p>
+                <p><a class="readMore" href="viewpost.php?id=<?= $row['postID'] ?>">read more</a></p>
             </div>
             <?php
 
@@ -50,6 +50,9 @@ require('includes/config.php');
     ?>
 
 </div>
+<footer class="footer">
+    <p>&copy; eikood 2015 - proudly made without any framework</p>
+</footer>
 
 
 </body>

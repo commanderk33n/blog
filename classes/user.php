@@ -1,62 +1,56 @@
 <?php
 
-/**
- * Project: blog
- * File: user.php
- * User: eikood
- * Date: 10.10.15
- * Time: 22:15
- */
-class User
-{
+include('password.php');
+
+class User extends Password{
+
     private $db;
 
-    public function __construct($db)
-    {
-        $this->db = $db;
+    function __construct($db){
+        parent::__construct();
+
+        $this->_db = $db;
     }
 
-    public function is_logged_in()
-    {
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        return true;
-    }
-    }
-
-    public function create_hash($value)
-    {
-        return $hash = crypt($value, '$2a$12$' . substr(str_replace('+', '.', base64_encode(sha1(microtime(true), true))), 0, 22));
+    public function is_logged_in(){
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            return true;
+        }
     }
 
-    private function verify_hash($password, $hash)
-    {
-        return $hash == crypt($password, $hash);
-    }
+    private function get_user_hash($username){
 
-    private function get_user_hash($username)
-    {
         try {
-            $stmt = $this->db->prepare('SELECT password FROM blog_members WHERE username = :username');
+
+            $stmt = $this->_db->prepare('SELECT password FROM blog_members WHERE username = :username');
             $stmt->execute(array('username' => $username));
 
             $row = $stmt->fetch();
             return $row['password'];
-        } catch (PDOException $e) {
-            echo '<p class="error">'.$e->getMessage() . '</p>';
+
+        } catch(PDOException $e) {
+            echo '<p class="error">'.$e->getMessage().'</p>';
         }
     }
 
-    public function login($username, $password) {
+
+    public function login($username,$password){
+
         $hashed = $this->get_user_hash($username);
 
-        if($this->verify_hash($password,$hashed) == 1){
+        if($this->password_verify($password,$hashed) == 1){
+
             $_SESSION['loggedin'] = true;
             return true;
         }
     }
+
 
     public function logout(){
         session_destroy();
     }
 
 }
+
+
+?>
