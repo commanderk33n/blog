@@ -59,7 +59,7 @@ if (isset($_GET['delpost'])) {
 
                     <td>
                         <a href="edit-post.php?id=<?= $row['postID'] ?>">Edit</a>
-                        <a href="javascript:delpost('<?= $row['postID'] ?>, <?= $row['postTitle'] ?>">Delete</a>
+                        <a href="javascript:delpost('<?= $row['postID'] ?>','<?= $row['postTitle']?>')">Delete</a>
                     </td>
                 </tr>
 
