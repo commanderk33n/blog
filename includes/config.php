@@ -9,6 +9,10 @@
 ob_start();
 session_start();
 
+// Delete this 2 lines after finishing the project, temporary debug stuff
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 //database credentials
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -47,5 +51,6 @@ function __autoload($class) {
 }
 
 $user = new User($db);
+$paging = new Paging($db);
 
 ?>

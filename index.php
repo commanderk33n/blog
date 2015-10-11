@@ -13,7 +13,7 @@ require('includes/config.php');
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>eikood.xyz</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -21,32 +21,15 @@ require('includes/config.php');
 
 <div id="wrapper">
 
-    <h1>eikood's blog - my scrapbook and other silly crap...</h1>
+    <h1>My scrapbook and other silly crap...</h1>
     <hr/>
 
     <?php
-    try {
-
-        $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID');
-        while ($row = $stmt->fetch()) {
-            ?>
-
-            <div>
-                <h1><a href="viewpost.php?id=<?= $row['postID'] ?>"> <?= $row['postTitle'] ?></a></h1>
-
-                <p>posted on <?= date('jS M Y H:i:s', strtotime($row['postDate'])) ?></p>
-
-                <p><?= $row['postDesc'] ?></p>
-
-                <p><a class="readMore" href="viewpost.php?id=<?= $row['postID'] ?>">read more</a></p>
-            </div>
-            <?php
-
-        }
-
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+    $query = "SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID";
+    $records_per_page=5;
+    $newquery = $paging->paging($query,$records_per_page);
+    $paging->dataview($newquery, "index");
+    $paging->paginglink($query,$records_per_page);
     ?>
 
 </div>

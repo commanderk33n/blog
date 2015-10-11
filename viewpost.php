@@ -22,7 +22,7 @@ if ($row['postID'] == '') {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog - <?php echo $row['postTitle'] ?></title>
+    <title>eikood.xyz<?php echo $row['postTitle'] ?></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -30,9 +30,9 @@ if ($row['postID'] == '') {
 
 <div id="wrapper">
 
-    <h1>Blog</h1>
+    <h1>My scrapbook and other silly crap...</h1>
     <hr/>
-    <p><a href="./">Blog Index</a></p>
+    <p><a href="./">back</a></p>
 
     <div>
         <h1><?= $row['postTitle'] ?></h1>
@@ -42,6 +42,9 @@ if ($row['postID'] == '') {
         <p><?= $row['postCont'] ?></p>
     </div>
 </div>
+<footer class="footer">
+    <p>&copy; eikood 2015 - proudly made without any framework</p>
+</footer>
 
 
 </body>

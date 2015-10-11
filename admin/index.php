@@ -49,25 +49,11 @@ if (isset($_GET['delpost'])) {
         </tr>
 
         <?php
-        try {
-            $stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
-            while ($row = $stmt->fetch()) {
-                ?>
-                <tr>
-                    <td><?= $row['postTitle'] ?></td>
-                    <td><?= date('jS M Y', strtotime($row['postDate'])) ?></td>
-
-                    <td>
-                        <a href="edit-post.php?id=<?= $row['postID'] ?>">Edit</a>
-                        <a href="javascript:delpost('<?= $row['postID'] ?>','<?= $row['postTitle']?>')">Delete</a>
-                    </td>
-                </tr>
-
-                <?php
-            }
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
+        $query = "SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC";
+        $records_per_page = 30;
+        $newquery = $paging->paging($query, $records_per_page);
+        $paging->dataview($newquery, "admin");
+        $paging->paginglink($query, $records_per_page);
 
         ?>
     </table>
