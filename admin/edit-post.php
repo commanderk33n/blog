@@ -21,18 +21,19 @@ if (!$user->is_logged_in()) {
     <title>Admin - Edit Post</title>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-            selector: "textarea",
-            plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-        });
-    </script>
+      <script src="../js/tinymce.min.js"></script>
+    <script src="../js/jquery.tinymce.min.js"></script>
+  <script>
+      tinymce.init({
+          selector: "textarea",
+          plugins: [
+              "advlist autolink lists link image charmap print preview anchor",
+              "searchreplace visualblocks code fullscreen codesample",
+              "insertdatetime media table contextmenu paste"
+          ],
+          toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample"
+      });
+  </script>
 </head>
 <body>
 

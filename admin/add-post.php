@@ -22,15 +22,16 @@ if (!$user->is_logged_in()) {
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/tinymce.min.js"></script>
+      <script src="../js/jquery.tinymce.min.js"></script>
     <script>
         tinymce.init({
             selector: "textarea",
             plugins: [
                 "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
+                "searchreplace visualblocks code fullscreen codesample",
                 "insertdatetime media table contextmenu paste"
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample"
         });
     </script>
 </head>

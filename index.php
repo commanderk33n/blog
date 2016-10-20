@@ -21,7 +21,7 @@ require('includes/config.php');
 
 <div id="wrapper">
 
-    <h1>My scrapbook and other silly crap...</h1>
+    <h1>Random thoughts and other silly crap...</h1>
     <hr/>
 
     <?php
@@ -34,7 +34,7 @@ require('includes/config.php');
 
 </div>
 <footer class="footer">
-    <p>&copy; eikood 2015 - proudly made without any framework</p>
+    <p>&copy; eikood 2015 - Just Because You Can, Should You?</p>
 </footer>
 
 
