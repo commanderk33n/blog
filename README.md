@@ -7,8 +7,8 @@ smallBlog is a lowweight CMS written in PHP
 - import sample sql file /db/db.sql into your database
 - admin page can be reached via www.yourserver.com/admin
 - Demo login credentials:
-    - User: Demo
-    - Password: Demo
+    - User: demo
+    - Password: demo
 
 ## features
 - crud system for users and blogposts
