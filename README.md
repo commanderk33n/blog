@@ -1,5 +1,5 @@
 # smallBlog
-smallBlog is a lowweight CMS written in PHP
+smallBlog is a low weight CMS for creating blogs written in PHP
 
 ## howto
 - prerequisite: LAMP stack or something similar
