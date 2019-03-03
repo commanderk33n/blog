@@ -2,7 +2,7 @@
 /**
  * Project: blog
  * File: index.php
- * User: eikood
+ * User: keen
  * Date: 10.10.15
  * Time: 21:30
  */
@@ -13,7 +13,7 @@ require('includes/config.php');
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>eikood.xyz</title>
+    <title>blog.xyz</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -34,7 +34,7 @@ require('includes/config.php');
 
 </div>
 <footer class="footer">
-    <p>&copy; eikood 2015 - Just Because You Can, Should You?</p>
+    <p>&copy; commanderk33n 2019 - Just Because You Can, Should You?</p>
 </footer>
 
 

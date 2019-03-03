@@ -2,7 +2,7 @@
 /**
  * Project: blog
  * File: viewpost.php
- * User: eikood
+ * User: commanderk33n
  * Date: 10.10.15
  * Time: 21:50
  */
@@ -43,7 +43,7 @@ if ($row['postID'] == '') {
     </div>
 </div>
 <footer class="footer">
-    <p>&copy; eikood 2015 - proudly made without any framework</p>
+    <p>&copy; commanderk33n 2019 - proudly made without any framework</p>
 </footer>
 
 

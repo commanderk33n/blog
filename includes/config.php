@@ -2,7 +2,7 @@
 /**
  * Project: blog
  * File: config.php
- * User: eikood
+ * User: commanderk33n
  * Date: 10.10.15
  * Time: 21:27
  */

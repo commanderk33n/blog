@@ -3,7 +3,7 @@
 /**
  * Project: blog
  * File: password.php
- * User: eikood
+ * User: commanderk33n
  * Date: 11.10.15
  * Time: 00:31
  */

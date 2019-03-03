@@ -3,7 +3,7 @@
 /**
  * Project: blog
  * File: paging.php
- * User: eikood
+ * User: commanderk33n
  * Date: 11.10.15
  * Time: 02:25
  */
